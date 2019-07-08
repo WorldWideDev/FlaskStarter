@@ -1,0 +1,91 @@
+body {
+    background-color: #a1a1a1;
+}
+h1, h2, h3, h4, h5, p, button, label {
+    color: #353535;
+}
+* {
+    font-family: "Bree Serif","Work Sans","Fira Sans","IBM Plex Sans", serif;
+}
+nav {
+    border-bottom: solid 2px black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+nav>h1, nav>h2 {
+    display: inline;
+}
+nav > a {
+    float: right;
+}
+table.table thead {
+    background-color: darkgray;
+    height: 1.2em;
+}
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.table, table.table>thead>tr {
+    border: solid black 2px;
+}
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 2px;
+    opacity: 0.7;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn:hover {
+    opacity: 1;
+}
+
+.btn-danger {
+    background-color: #f4511e;
+    color: white;
+}
+.btn-ok {
+    background-color: #6e9eeb;
+    color: white;
+}
+.scroller { 
+    margin: 10px;
+    overflow-y: scroll;
+    height: 210px;
+}
+.container {
+    text-align: center;
+}
+.content h2 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+.content {
+    min-height: 300px;
+    border-radius: 5px 5px;
+    background-color: #a6c894;
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    text-align: left;
+    padding: 30px;
+    margin: 10px;
+}
+.content>p span {
+    font-weight: bold;
+    margin-right: 15px;
+}
+.fm-group label {
+    display:  block;
+    margin: 5px 2px;
+}
+.fm-group > input {
+   width: 80%;
+}

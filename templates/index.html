@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Action</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dev-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listy.css') }}">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>Sup Users</h1>
+    </nav>
+    <div class="container">
+        <div class="content content-left">
+            <h2>Here are some Users:</h2>
+            <div class="scroller">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Date Registered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td><a href="/show/{{ user.id }}">{{ user.name }}</a></td>
+                            <td>{{ user.location }}</td>
+                            <td>{{ user.created_at.strftime("%m/%d/%Y") }}</td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="content content-right">
+            <h2>Add a User</h2>
+            <form class="lol-form" action="/create" method="post">
+                <div class="fm-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="fm-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location">
+                </div>
+                <button class="btn btn-ok">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

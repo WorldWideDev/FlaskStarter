@@ -1,0 +1,31 @@
+.listy {
+    list-style: none;
+}
+/* */
+.listy li::before {
+    color: black; /* Change the color */
+    text-shadow: 2px 2px 8px gray;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1.5em; /* Also needed for space (tweak if needed) */
+ }
+
+.listy li:nth-child(1)::before {
+    content: "\3192";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+}
+.listy li:nth-child(2)::before {
+    content: "\3193";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+}
+.listy li:nth-child(3)::before {
+    content: "\3194";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+}
+.listy li:nth-child(4)::before {
+    content: "\3195";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+}
+.listy span {
+    color: orange;
+    font-weight: bold;
+}
+li {
+    color: black;
+}

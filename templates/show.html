@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Action</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dev-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listy.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>{{ user.name }} from {{ user.location }}</h1>
+        <a href="/">Home</a>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>Update {{ user.name }}</h2>
+            <form action="/update/{{ user.id }}" method="post">
+                <div class="fm-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" value="{{ user.name }}" name="name">
+                </div>
+                <div class="fm-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" value="{{ user.location }}">
+                </div>
+                <button class="btn btn-ok">Update</button>
+            </form>
+            <hr>
+            <a class="btn btn-danger" href="/delete/{{ user.id }}">Delete</a>
+        </div>
+        <div class="content">
+            <h2>Stats:</h2>
+            <p><span>ID</span>{{ user.id }}</p>
+            <p><span>Name</span>{{ user.name }}</p>
+            <p><span>Location</span>{{ user.location }}</p>
+            <p><span>Date Added</span>{{ user.created_at.strftime("%m/%d/%Y %-I:%M%P") }}</p>
+            <p><span>Last Updated</span>{% if user.updated_at %}{{ user.updated_at.strftime("%m/%d/%Y %-I:%M%P") }}{% else %}N/A{% endif %}</p>
+        </div>
+    </div>
+</body>
+</html>
